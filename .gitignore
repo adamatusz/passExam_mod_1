@@ -40,6 +40,7 @@ bower_components
 
 # IDE - VSCode
 .vscode/*
+.vscode
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
@@ -86,10 +87,11 @@ jspm_packages/
 # Lerna
 lerna-debug.log
 
-# System Files
+# System Files 
 .DS_Store
 Thumbs.db
 
 # files
 .idea
+.vscode
 media/movie
