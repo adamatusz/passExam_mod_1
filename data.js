@@ -21,6 +21,7 @@ export const rowData = {
       edited: "2014-12-20T21:30:21.661000Z",
       url: "https://swapi.dev/api/vehicles/4/",
     },
+
     {
       name: "T-16 skyhopper",
       model: "T-16 skyhopper",
