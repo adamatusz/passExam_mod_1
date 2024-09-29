@@ -1,0 +1,567 @@
+:root {
+  font-size: 1.1rem;
+  --mainColor: rgba(100, 102, 224, 0.753);
+  --btnBgHoverColor: rgba(0, 255, 0, 0.425);
+  --btnHoverColor: rgb(207, 241, 206);
+  --btnBgColor: rgba(10, 10, 10, 0.5);
+  --mainBgColor: rgba(10, 10, 10, 0.863);
+  --notWhite: rgb(245, 245, 245);
+  --notBlack: rgb(10, 10, 10);
+}
+
+* {
+  font-size: 1rem;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  gap: 2rem;
+  background: url("./media/pictures/wallhaven-0wpv6n.jpg") center/cover no-repeat fixed;
+  width: 100%;
+  height: 100%;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: bold;
+  font-size: 3rem;
+}
+
+header {
+  display: flex;
+  flex-flow: nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 0.5rem 0rem;
+  width: 100%;
+  background-color: var(--notBlack);
+  color: var(--btnBgHoverColor);
+  text-shadow: 0 0 15px var(--notWhite);
+  border-radius: 0.5rem;
+}
+
+button:active {
+  transform: scale(0.7);
+}
+
+#logo {
+  margin-top: 2rem;
+  align-self: center;
+  width: Min(40vw, 800px);
+}
+
+#radio-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.radioSite {
+  appearance: none;
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 1rem;
+  cursor: url("./media/pictures/lightsaber.png"), pointer;
+  box-shadow: 0 1px 1px rgba(grey, 0.15),
+    inset 0 0 1px 1px rgba(black, 0.5);
+  background-repeat: no-repeat;
+  transition: background-position 0.15s cubic-bezier(0.8, 0, 1, 1),
+    transform 0.25s cubic-bezier(0.8, 0, 1, 1);
+  outline: none;
+}
+
+.radioSite:hover {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+.radioSite:checked {
+  transition: background-position 0.2s 0.15s cubic-bezier(0, 0, 0.2, 1),
+    transform 0.25s cubic-bezier(0, 0, 0.2, 1);
+}
+
+.radioSite:active {
+  transform: scale(1.2);
+  transition: transform 0.1s cubic-bezier(0, 0, 0.2, 1);
+}
+
+.radioSite,
+.radioSite:active {
+  background-position: 3rem 0;
+}
+
+.radioSite:checked {
+  background-position: 0 0;
+}
+
+.radioSite:checked ~ .radioSite,
+.radioSite:checked ~ .radioSite:active {
+  background-position: -2rem 0px;
+}
+
+#site-1:active {
+  background-color: rgba(0, 255, 0, 0.842);
+}
+
+#site-2:active {
+  background-color: rgba(230, 217, 35, 0.829);
+}
+
+#site-3:active {
+  background-color: rgba(55, 0, 255, 0.3);
+}
+
+#site-1 {
+  background-color: rgba(0, 50, 0, 0.3);
+  background-image: radial-gradient(
+    rgb(206, 255, 204) 0%,
+    rgb(107, 255, 102) 15%,
+    rgba(51, 255, 68, 0.3) 28%,
+    rgba(0, 153, 13, 0) 70%
+  );
+  cursor: url("./media/pictures/lightsaber.png"), pointer;
+}
+
+#site-2 {
+  background-color: rgba(50, 0, 0, 0.3);
+  background-image: radial-gradient(
+    rgb(255, 204, 204) 0%,
+    rgb(255, 102, 102) 15%,
+    rgba(255, 51, 51, 0.3) 28%,
+    rgba(153, 0, 0, 0) 70%
+  );
+  cursor: url("./media/pictures/lightsaber.png"), pointer;
+}
+
+#site-3 {
+  background-color: rgba(0, 38, 50, 0.3);
+  background-image: radial-gradient(
+    rgb(204, 252, 255) 0%,
+    rgb(102, 250, 255) 15%,
+    rgba(51, 231, 255, 0.3) 28%,
+    rgba(0, 130, 153, 0) 70%
+  );
+  cursor: url("./media/pictures/lightsaber.png"), pointer;
+}
+
+.wrap {
+  display: flex;
+  width: Min(90vw, 1920px);
+}
+
+.buttons {
+  flex-flow: wrap;
+  gap: 15px;
+  justify-content: center;
+  max-height: 120px;
+}
+
+.search,
+.content {
+  gap: 1rem;
+  align-self: center;
+  border: 1px solid var(--mainColor);
+  color: var(--btnBgHoverColor);
+  background-color: var(--mainBgColor);
+  border-radius: 1rem;
+}
+
+.search {
+  flex-flow: row nowrap;
+  position: relative;
+  justify-content: space-evenly;
+  padding: 0.5rem 7rem 0.5rem 1rem;
+}
+
+.content {
+  padding: 0.4rem;
+  flex-flow: column nowrap;
+}
+
+.menuBtns {
+  box-shadow: 0 0 5px var(--mainColor), 0 0 15px var(--mainColor);
+  background-color: var(--btnBgColor);
+  border: 1px solid var(--mainColor);
+  color: var(--btnBgHoverColor);
+  text-shadow: 0 0 1px var(--notBlack), 0 0 15px var(--notBlack);
+  min-width: 6.25rem;
+  max-width: 7rem;
+  height: 7vw;
+  min-height: 2rem;
+  max-height: 6.25rem;
+  border-radius: 15px;
+  flex-grow: 1;
+  cursor: url("./media/pictures/lightsaber.png"), pointer;
+}
+
+.menuBtns:hover {
+  box-shadow: 0 0 5px var(--mainColor), 0 0 15px var(--mainColor),
+    0 0 30px var(--mainColor), 0 0 60px var(--mainColor),
+    0 0 120px var(--mainColor);
+  text-shadow: 0 0 5px black;
+  background-color: var(--btnBgHoverColor);
+  color: var(--btnHoverColor);
+  z-index: 2;
+}
+
+.active,
+.active:hover {
+  background-color: var(--mainColor);
+  font-weight: bold;
+  scale: 1.2;
+  color: var(--btnHoverColor);
+  text-shadow: 0 0 5px black;
+  z-index: 2;
+}
+
+#table-content {
+  border-collapse: collapse;
+  text-align: left;
+  color: violet;
+}
+
+#table-head {
+  background-color: var(--mainColor);
+  color: rgb(240, 240, 240);
+  border: none;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 5px var(--mainColor), 0 0 15px var(--mainColor);
+  text-shadow: 0 0 5px var(--mainColor), 0 0 15px var(--mainColor);
+}
+
+#table-body {
+  vertical-align: text-top;
+}
+
+#table-body td {
+  text-wrap: balance;
+  padding: 0.25rem;
+}
+
+#table-head tr {
+  border-radius: 0.5rem;
+}
+
+#table-head th {
+  color: violet;
+  border-left: 1.2rem solid var(--mainColor);
+}
+
+#table-head th:first-child,
+#table-body td:first-child {
+  border-radius: 0.5rem 0 0 0.5rem;
+  padding-left: 0.5rem;
+  border-left: none;
+}
+
+#table-head th:last-child,
+#table-body td:last-child {
+  border-radius: 0 0.5rem 0.5rem 0;
+  padding-right: 0.5rem;
+}
+
+#table-body td:nth-child(5) {
+  text-wrap: nowrap;
+}
+
+#table-body tr:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 0.5rem;
+}
+
+.actions-buttons {
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  flex-flow: row nowrap;
+  gap: 2px;
+}
+
+.showBtn,
+.deleteBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.3rem;
+  cursor: url("./media/pictures/lightsaber.png"), pointer;
+}
+
+.showBtn {
+  background-color: rgb(0, 150, 0);
+  border: 1px solid rgb(0, 100, 0);
+  font-size: 2rem;
+}
+
+.showBtn:hover {
+  background-color: darkgreen;
+}
+
+.deleteBtn {
+  background: firebrick url("./media/pictures/trash.webp") center/1.5rem no-repeat;
+  border: 1px solid rgb(100, 0, 0);
+}
+
+.deleteBtn:hover {
+  background-color: darkred;
+}
+
+#showInfoBox {
+  display: block;
+  position: fixed;
+  z-index: 3;
+  left: 0;
+  top: 0;
+  width: max(100vw, 380px);
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+}
+
+#info-wrap {
+  display: flex;
+  width: 90%;
+  height: 70%;
+  position: relative;
+  flex-flow: column nowrap;
+  margin: 10% auto;
+  border-radius: 0 0 0.5rem 0.5rem;
+  width: min(75%, 1000px);
+  height: 70%;
+}
+
+.info-title {
+  background-color: var(--mainColor);
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.info-title span strong {
+  padding-left: 1rem;
+  font-size: 1.5rem;
+  color: var(--notBlack);
+}
+
+#info-content {
+  position: relative;
+  background-color: rgb(245, 245, 245);
+  padding: 0.5rem 0.5rem;
+  border: 1px solid var(--mainColor);
+  border-top: 1px solid green;
+  border-radius: 0 0 0.5rem 0.5rem;
+  height: auto;
+  max-height: 60%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+#info-content::-webkit-scrollbar {
+  background-color: green;
+  border-radius: 0 0 0.5rem;
+}
+
+#info-content::-webkit-scrollbar-thumb {
+  background-color: var(--mainColor);
+  border-radius: 0.5rem;
+}
+
+#closeInfoBtn {
+  position: absolute;
+  padding-top: 2px;
+  right: 0.25rem;
+  float: right;
+}
+
+#closeInfoBtn:hover,
+#closeInfoBtn:focus {
+  cursor: url("./media/pictures/lightsaber.png"), pointer;
+}
+
+ul {
+  width: 100%;
+}
+
+li {
+  display: flex;
+  justify-content: baseline;
+  align-items: baseline;
+  gap: 0.5rem;
+  color: green;
+  width: 100%;
+  list-style-type: none;
+}
+
+li strong {
+  color: rgb(10, 10, 10);
+}
+
+li::before {
+  content: "🚀";
+  padding-left: 0.5rem;  
+}
+
+.search-by {
+  font-size: small;
+  height: 1.5rem;
+  border-radius: 0.3rem;
+  border: 1px solid;
+  padding: 2px;
+}
+
+.wrap-search {
+  display: flex;
+  flex-flow: wrap;
+  gap: 1px;
+  align-items: baseline;
+}
+
+#input-search-index {
+  width: 6rem;
+}
+
+#input-search-index::placeholder {
+  color: var(--btnBgColor);
+}
+
+#input-search-text::placeholder {
+  color: var(--btnBgColor);
+}
+
+#wrapper-page-changer {
+  width: 100%;
+  border-top: 1px solid var(--mainColor);
+  border-radius: 0.5rem;
+  background-color: var(--btnBgColor);
+  padding: 1rem 0 0.5rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+#btnDelChecked {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 1rem;
+  border: 1px solid green;
+  height: 2.5rem;
+  padding: 0.4rem;
+  font-weight: 800;
+  color: green;
+  cursor:  url("./media/pictures/lightsaber.png"), pointer;
+  text-align: center;
+}
+
+#btnDelChecked:hover {
+  color: var(--mainColor);
+}
+
+.btn-pages {
+  width: 1rem;
+  height: 1.5rem;
+  border-radius: 0.3rem;
+  border: 1px solid;
+  color: green;
+}
+
+.btn-pages:active {
+  color: var(--mainColor);
+}
+
+.btn-pages:disabled {
+  color: gray;
+  border: 1px solid black;
+}
+
+#curr-page {
+  width: 2.5rem;
+  height: 1.5rem;
+  border-radius: 0.3rem;
+  border: 1px solid;
+  color: green;
+  padding-left: 3px;
+}
+
+#curr-page::placeholder {
+  color: var(--btnBgColor);
+}
+
+#curr-page:focus {
+  border: 1px solid;
+}
+
+#amount-item {
+  height: 1.5rem;
+  background-color: green;
+  border-radius: 0.3rem;
+  color: var(--notBlack);
+}
+
+#amount-item option {
+  appearance: none;
+  background-color: var(--mainBgColor);
+  border-radius: 0.3rem;
+}
+
+.disabled {
+  display: none;
+}
+
+@media (max-width: 720px) {
+  body {
+    gap: 1rem;
+  }
+  .buttons {
+    gap: 0.5rem;
+  }
+  #curr-page {
+    width: 3.5rem;
+  }
+
+  .wrap-search label {
+    display: none;
+  }
+  .search-by,
+  #input-search-index {
+    min-width: none;
+    max-width: none;
+    width: 15rem;
+  }
+  #input-search-index::placeholder:before {
+    content: "Search by index: ";
+  }
+}
+
+@media (max-width: 400px) {
+  body {
+    gap: 0.25rem;
+  }
+  header {
+    margin-bottom: 1rem;
+  }
+  button:active {
+    transform: scale(0.98);
+  }
+  .active,
+  .active:hover {
+    scale: 1;
+  }
+  .wrap {
+    width: max(95vw, 380px);
+  }
+  .buttons {
+    flex-flow: column nowrap;
+    gap: 0.25rem;
+    align-items: center;
+  }
+  .menuBtns {
+    max-width: none;
+    width: 100%;
+  }
+  .menuBtns:hover {
+    box-shadow: none;
+  }
+}
