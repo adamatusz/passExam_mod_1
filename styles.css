@@ -246,7 +246,7 @@ button:active {
 
 #table-head th {
   color: violet;
-  border-left: 1.2rem solid var(--mainColor);
+  border-left: 1.2rem var(--mainColor);
 }
 
 #table-head th:first-child,
